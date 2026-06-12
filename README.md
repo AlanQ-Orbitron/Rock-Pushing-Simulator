@@ -5,6 +5,9 @@ WASD
 
 Space to interact, Z to undo 
 
+Current Map progress!!
+<img width="894" height="471" alt="image" src="https://github.com/user-attachments/assets/38154401-4f60-45d3-a25c-f87964ce9911" />
+
 
 Funny assets
 
