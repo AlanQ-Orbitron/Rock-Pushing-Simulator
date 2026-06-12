@@ -8,6 +8,7 @@ Space to interact, Z to undo
 
 Current Map progress!!
 <img width="894" height="471" alt="image" src="https://github.com/user-attachments/assets/38154401-4f60-45d3-a25c-f87964ce9911" />
+<img width="712" height="401" alt="image" src="https://github.com/user-attachments/assets/319cb2e3-a7ba-4a6d-8a0d-c797265d6678" />
 
 
 Funny assets
