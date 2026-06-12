@@ -1,5 +1,6 @@
 Its really self-explanatory! You push rocks!
 
+Godot project
 
 WASD
 
@@ -26,7 +27,7 @@ Unpublish assets
 
 
 
-All of the art is done by ME!!! I try to make it good, but sometimes I get really lazy with it, its a bad habit.
+All of the code and art is done by ME!!! I try to make it good, but sometimes I get really lazy with it, its a bad habit.
 
 Completeness:
 
