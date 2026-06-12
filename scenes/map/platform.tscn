@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://camcp6lqj2kpb"]
+
+[ext_resource type="Script" uid="uid://fpg0g1d4ekpv" path="res://scenes/map/platform.gd" id="1_ba0x2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_v4t87"]
+size = Vector2(32, 32)
+
+[node name="Platform" type="Marker2D" unique_id=1468408503]
+script = ExtResource("1_ba0x2")
+
+[node name="PlaceHolder" type="MeshInstance2D" parent="." unique_id=222084083]
+modulate = Color(1, 1, 1, 0)
+mesh = SubResource("QuadMesh_v4t87")

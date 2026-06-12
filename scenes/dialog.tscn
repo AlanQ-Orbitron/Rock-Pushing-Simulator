@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c4dn3srl7dof"]
+
+[ext_resource type="Script" uid="uid://by8fmhpldj46a" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="1_auqi6"]
+[ext_resource type="Script" uid="uid://ckq1fkqyimrf8" path="res://scenes/dialog.gd" id="1_b1kyf"]
+[ext_resource type="Script" uid="uid://m31i3axecagx" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="2_4wims"]
+[ext_resource type="Resource" uid="uid://dic2fc5wqrtaa" path="res://assets/dialogs/talk.tres" id="2_b1kyf"]
+[ext_resource type="Script" uid="uid://blmdt7v8bd0nl" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="3_b1kyf"]
+[ext_resource type="Script" uid="uid://bsoctnc26xumr" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="4_owmcw"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_owmcw"]
+script = ExtResource("2_4wims")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ygo2i"]
+script = ExtResource("3_b1kyf")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_lar43"]
+script = ExtResource("4_owmcw")
+
+[node name="Dialog" type="Control" unique_id=1491127866]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b1kyf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=643796296]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 412.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer" unique_id=845144404]
+visible = false
+layout_mode = 2
+placeholder_text = "Type Here"
+
+[node name="DialogueBox" type="Panel" parent="MarginContainer" unique_id=678534052]
+visible = false
+layout_mode = 2
+script = ExtResource("1_auqi6")
+data = ExtResource("2_b1kyf")
+start_id = "Practice Talking"
+hide_portrait = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_owmcw"), SubResource("RichTextEffect_ygo2i"), SubResource("RichTextEffect_lar43")])
+metadata/_custom_type_script = "uid://by8fmhpldj46a"
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="hidden" from="." to="." method="_on_hidden"]
+[connection signal="text_submitted" from="MarginContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="dialogue_ended" from="MarginContainer/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]
+[connection signal="dialogue_signal" from="MarginContainer/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
+[connection signal="dialogue_started" from="MarginContainer/DialogueBox" to="." method="_on_dialogue_box_dialogue_started"]

@@ -1,0 +1,526 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dic2fc5wqrtaa"]
+
+[ext_resource type="Script" uid="uid://eit47g61t72a" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_21ih0"]
+
+[resource]
+script = ExtResource("1_21ih0")
+starts = {
+"Practice Talking": &"0_2",
+"Talking Rock": &"0_3",
+"Whats my Name": &"0_1",
+"Whats my Name Continue": &"0_4"
+}
+nodes = {
+&"0_1": {
+"link": &"1_9",
+"offset": Vector2(-240, 680),
+"start_id": "Whats my Name"
+},
+&"0_2": {
+"link": &"1_10",
+"offset": Vector2(-960, 120),
+"start_id": "Practice Talking"
+},
+&"0_3": {
+"link": &"1_14",
+"offset": Vector2(-960, -160),
+"start_id": "Talking Rock"
+},
+&"0_4": {
+"link": &"1_7",
+"offset": Vector2(680, 800),
+"start_id": "Whats my Name Continue"
+},
+&"1_1": {
+"dialogue": "My name is {{Player}} what's your name?",
+"offset": Vector2(340, 120),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 240.0003),
+"speaker": "You"
+},
+&"1_10": {
+"dialogue": "*Its a tree*",
+"offset": Vector2(-740, 120),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_11",
+"text": "Practice talking?"
+},
+1: {
+"condition": Array[Dictionary]([]),
+"link": "END",
+"text": "No! Too skiddish."
+}
+},
+"size": Vector2(300.0005, 299.99982),
+"speaker": ""
+},
+&"1_11": {
+"dialogue": "Hi!....",
+"offset": Vector2(-400, 120),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300.00012, 240.0003),
+"speaker": "You"
+},
+&"1_12": {
+"dialogue": "...",
+"offset": Vector2(-60, 120),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_1",
+"text": "Keep talking?"
+}
+},
+"size": Vector2(300.0005, 266.99994),
+"speaker": "Tree"
+},
+&"1_13": {
+"dialogue": "...",
+"offset": Vector2(1700, 120),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"3_2",
+"text": "Find something with a higher capacity for talking!"
+}
+},
+"size": Vector2(300.00024, 266.99994),
+"speaker": "You"
+},
+&"1_14": {
+"dialogue": "Hey do you talk?",
+"offset": Vector2(-740, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00009),
+"speaker": "You"
+},
+&"1_15": {
+"dialogue": "*The rock makes no responds*",
+"offset": Vector2(-400, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_16",
+"text": "Talk to yourself."
+}
+},
+"size": Vector2(300.00012, 266.99988),
+"speaker": "Rock"
+},
+&"1_16": {
+"dialogue": "Haha I guess not, why would it talk?",
+"offset": Vector2(-60, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00009),
+"speaker": "You"
+},
+&"1_17": {
+"dialogue": "Of course I talk!",
+"offset": Vector2(280, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_18",
+"text": "AHHHH!"
+},
+1: {
+"condition": Array[Dictionary]([]),
+"link": &"1_18",
+"text": "AHHHH!"
+}
+},
+"size": Vector2(300.00024, 299.99988),
+"speaker": "Rock"
+},
+&"1_18": {
+"dialogue": "AHHHHHHHHHHH!",
+"offset": Vector2(620, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_19",
+"text": ""
+}
+},
+"size": Vector2(300.00037, 240.00009),
+"speaker": "You"
+},
+&"1_19": {
+"dialogue": "AHHHHHHHHHHH!",
+"offset": Vector2(960, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_20",
+"text": "Screaming rock"
+}
+},
+"size": Vector2(300.0005, 266.99988),
+"speaker": "Rock"
+},
+&"1_2": {
+"dialogue": "*The tree give no discernible reactions*",
+"offset": Vector2(680, 120),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_3",
+"text": "Hug the tree!"
+},
+1: {
+"condition": Array[Dictionary]([]),
+"link": &"1_5",
+"text": "Don't hug the tree!"
+}
+},
+"size": Vector2(300.00043, 299.99982),
+"speaker": "Tree"
+},
+&"1_20": {
+"dialogue": "Why are you screaming???",
+"offset": Vector2(1300, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_21",
+"text": "Why is the rock screaming!"
+}
+},
+"size": Vector2(300.00024, 266.99988),
+"speaker": "You"
+},
+&"1_21": {
+"dialogue": "Oh, well you sceamed so I screamed.",
+"offset": Vector2(1640, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_22",
+"text": "The rock screammed"
+}
+},
+"size": Vector2(300.00012, 266.99988),
+"speaker": "Rock"
+},
+&"1_22": {
+"dialogue": "WHa- b-but... how can you talk? ",
+"offset": Vector2(1980, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_23",
+"text": ""
+}
+},
+"size": Vector2(300.0006, 240.00009),
+"speaker": "You"
+},
+&"1_23": {
+"dialogue": "Of course I talk.",
+"offset": Vector2(2320, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_24",
+"text": "It talks!"
+}
+},
+"size": Vector2(300.00024, 266.99988),
+"speaker": "Rock"
+},
+&"1_24": {
+"dialogue": "I get that but earl-",
+"offset": Vector2(2660, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_25",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00009),
+"speaker": "You"
+},
+&"1_25": {
+"dialogue": "Earlier I had a nap, then you woke me up!",
+"offset": Vector2(3000, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_26",
+"text": "Oh..."
+}
+},
+"size": Vector2(300.00244, 266.99988),
+"speaker": "Rock"
+},
+&"1_26": {
+"dialogue": "Oh...",
+"offset": Vector2(3340, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_30",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 339.99994),
+"speaker": "You"
+},
+&"1_27": {
+"dialogue": "Yeah! Um do you want to be friends my name is {{Player}}.",
+"offset": Vector2(4020, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_31",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240.00009),
+"speaker": "Player"
+},
+&"1_28": {
+"dialogue": "Rock is... a nice name...",
+"offset": Vector2(4700, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_32",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00009),
+"speaker": "You"
+},
+&"1_29": {
+"dialogue": "So am I your only friend or do you have other freinds?",
+"offset": Vector2(4700, 100),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_33",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00006),
+"speaker": "You"
+},
+&"1_3": {
+"dialogue": "*You hug the tree*
+",
+"offset": Vector2(1020, 120),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300.00256, 240.9997),
+"speaker": "You"
+},
+&"1_30": {
+"dialogue": "So did you need something?",
+"offset": Vector2(3680, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_27",
+"text": ""
+}
+},
+"size": Vector2(300.00195, 344.99994),
+"speaker": "Rock"
+},
+&"1_31": {
+"dialogue": "Oh sure! My name is Rock!",
+"offset": Vector2(4360, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_28",
+"text": "Rock, I will remember that!"
+},
+1: {
+"condition": Array[Dictionary]([]),
+"link": &"1_29",
+"text": "Do you have freinds?"
+}
+},
+"size": Vector2(300.0005, 267),
+"speaker": "Rock"
+},
+&"1_32": {
+"dialogue": "Yes thank you my mother named me it.",
+"offset": Vector2(5040, -160),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_29",
+"text": "Do you have freinds?"
+}
+},
+"size": Vector2(300, 240.00009),
+"speaker": "Rock"
+},
+&"1_33": {
+"dialogue": "But of course I do! I have a penpal, though we've never been face to face due to the path being blocked, if only there was a way across!",
+"offset": Vector2(5040, 100),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"3_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00006),
+"speaker": "Rock"
+},
+&"1_34": {
+"dialogue": "I ran away because talking was hard...",
+"offset": Vector2(1240, 680),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300.00037, 240.00012),
+"speaker": "You"
+},
+&"1_4": {
+"dialogue": "*The tree give no discernible reactions*",
+"offset": Vector2(1360, 120),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 240.9997),
+"speaker": "Tree"
+},
+&"1_5": {
+"dialogue": "*You stand there awkwardly*",
+"offset": Vector2(1020, 380),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300.0016, 241.00006),
+"speaker": "You"
+},
+&"1_6": {
+"dialogue": "[wait speed=20]My head hurts...[/wait] [wait speed=9 time=0.4]what[/wait] [wait speed=10 time=1.7]was my name again?[/wait]",
+"offset": Vector2(320, 680),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 241.00061),
+"speaker": "You"
+},
+&"1_7": {
+"dialogue": "Yes, [wait speed=10 time=0.7]I remember now it was [/wait][wait speed=10 time=2.6]{{Player}}.[/wait]",
+"offset": Vector2(900, 680),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_34",
+"text": ""
+}
+},
+"size": Vector2(300.00134, 240.00085),
+"speaker": "You"
+},
+&"1_8": {
+"dialogue": "I need to practice talking! [b]Find something to practice talking to perhaps a [wave]Tree[/wave][/b]",
+"offset": Vector2(1580, 680),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240.00085),
+"speaker": "You"
+},
+&"1_9": {
+"dialogue": "[wait speed=10]Aughh?????[/wait]",
+"offset": Vector2(-20, 680),
+"options": {
+0: {
+"condition": Array[Dictionary]([]),
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 240.00085),
+"speaker": "You"
+},
+&"3_1": {
+"link": "END",
+"offset": Vector2(660, 680),
+"signalValue": "getName"
+},
+&"3_2": {
+"link": "END",
+"offset": Vector2(2040, 120),
+"signalValue": "PracticeTalk"
+},
+&"3_3": {
+"link": "END",
+"offset": Vector2(5400, 260),
+"signalValue": "RockTalk"
+}
+}
+variables = {
+"Player": {
+"type": 4,
+"value": "Sarah"
+},
+"PracticeTalk": {
+"type": 1,
+"value": false
+},
+"isTreeHugger": {
+"type": 1,
+"value": true
+}
+}
