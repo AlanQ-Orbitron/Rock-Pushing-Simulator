@@ -1,4 +1,4 @@
-Its really self-explanatory! You push rocks!
+Its really self-explanatory! You push rocks! You can also talk to them, but the dialog system is currently broken, if you go far enough into the game you get to play 4x4 Slider puzzel!!!!
 
 Godot project
 
