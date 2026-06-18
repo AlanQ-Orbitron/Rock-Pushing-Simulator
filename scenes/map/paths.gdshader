@@ -1,14 +1,32 @@
 shader_type canvas_item;
 
-void vertex() {
-	// Called for every vertex the material is visible on.
+uniform float speed = 0.5;
+uniform float threshold = 0.2;
+uniform float world_scale = 4.0;
+
+vec3 palette(float t)
+{
+    return 0.5 + 0.5 * cos(6.28318 * (t + vec3(0.0, 0.33, 0.67)));
 }
 
-void fragment() {
-	// Called for every pixel the material is visible on.
-}
+void fragment()
+{
+    vec4 base = texture(TEXTURE, UV);
 
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}
+    float blue_mask = base.b - max(base.r, base.g);
+    float mask = smoothstep(threshold, threshold + 0.2, blue_mask);
+
+    vec2 world = SCREEN_UV * world_scale;
+
+    float liquid_rainbow =
+        world.x +
+        world.y +
+        sin(world.x * 2.0 + TIME * speed) +
+        cos(world.y * 2.0 - TIME * speed);
+
+    vec3 liquid = palette(liquid_rainbow);
+
+    vec3 color = mix(base.rgb, liquid, mask);
+
+    COLOR = vec4(color, base.a);
+}

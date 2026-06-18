@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://nptmwc2lgmcq"]
+
+[ext_resource type="Script" uid="uid://dld2cuxge47fh" path="res://scenes/charactors/new_portrait.gd" id="1_4q2mj"]
+
+[node name="NewPortrait" type="Node2D" unique_id=1061970180]
+script = ExtResource("1_4q2mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=597546497]

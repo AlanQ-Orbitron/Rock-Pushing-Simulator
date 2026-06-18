@@ -1,33 +1,33 @@
 extends TileMapLayer
-@onready var player: TileMapLayer = $"../Player"
-@onready var Rocks: TileMapLayer = $"../Rocks"
-@onready var platforms: Node2D = $"../Platforms"
-@onready var Floor: TileMapLayer = $"../Floor"
+
+@export_category("Context")
+@export var Floor: TileMapLayer
+@export var Player: TileMapLayer
+@export var Objects: TileMapLayer
+
+@export_category("Connector")
+@export var TilePosition: Vector2i
 
 func _ready() -> void:
-	player.movement_input.connect(movementTrigger)
+	Player.movement_input.connect(movementTrigger)
 	
 func movementTrigger() -> void:
-	for switch: Vector2 in get_used_cells():
-		if get_cell_atlas_coords(switch) == Vector2i(0, 3):
-			continue
-		if Rocks.get_cell_tile_data(switch) != null || player.get_cell_tile_data(switch) != null:
-			set_cell(switch, 0, Vector2(7, 0))
+	var greySwitches: bool = true
+	var greenSwitches: bool = false
+	for switch: Vector2i in get_used_cells():
+		if !switchState(switch, Vector2i(0, 8), Vector2i(1, 8)):
+			greySwitches = false
+		if switchState(switch, Vector2i(0, 9), Vector2i(1, 9)):
+			greenSwitches = true
+	if greySwitches || greenSwitches:
+		Floor.set_cell(TilePosition, 0, Vector2i(2, 8))
+	else:
+		Floor.set_cell(TilePosition, 0, Vector2i(3, 8))
+
+func switchState(currentPosition: Vector2i, offAtlas: Vector2i, onAtlas: Vector2i) -> bool:
+		if Objects.get_cell_tile_data(currentPosition) != null || Player.get_cell_tile_data(currentPosition) != null:
+			set_cell(currentPosition, 0, onAtlas)
+			return true
 		else:
-			set_cell(switch, 0, Vector2(6, 0))
-	for platform: Marker2D in platforms.get_children():
-		var isOrSolid: bool = false
-		for switch: Vector2 in platform.orSwitches:
-			if get_cell_atlas_coords(switch) == Vector2i(7, 0):
-				isOrSolid = true
-		var isAndSolid: bool = true
-		if platform.andSwitches.size() == 0:
-			isAndSolid = false
-		for switch: Vector2 in platform.andSwitches:
-			if get_cell_atlas_coords(switch) == Vector2i(6, 0):
-				isAndSolid = false
-		
-		if isOrSolid || isAndSolid:
-			Floor.set_cell(local_to_map(platform.position), 0, Vector2(6, 1))
-		else:
-			Floor.set_cell(local_to_map(platform.position), 0, Vector2(7, 1))
+			set_cell(currentPosition, 0, offAtlas)
+			return false

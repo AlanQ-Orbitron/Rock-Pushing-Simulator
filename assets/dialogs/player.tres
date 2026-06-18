@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SproutyDialogsCharacterData" format=3 uid="uid://bas7pe216ar0l"]
+
+[ext_resource type="Script" uid="uid://kwoapf8il7ee" path="res://addons/sprouty_dialogs/resources/character_data.gd" id="1_od44e"]
+[ext_resource type="Script" uid="uid://ygs6blymsjbh" path="res://addons/sprouty_dialogs/resources/portrait_data.gd" id="1_wghw0"]
+
+[sub_resource type="Resource" id="Resource_wghw0"]
+script = ExtResource("1_wghw0")
+portrait_scene_uid = 944596845839757124
+portrait_scene_path = "res://scenes/charactors/new_portrait.tscn"
+export_overrides = {
+"portrait_image": {
+"type": 4,
+"value": "res://assets/texture/character_still.png"
+}
+}
+typing_sound = {}
+
+[resource]
+script = ExtResource("1_od44e")
+key_name = "player"
+display_name = {
+"default": "{Player}",
+"en": ""
+}
+description = "This is you! You are you!"
+dialog_box_uid = 8253672747027802455
+dialog_box_path = "res://scenes/charactors/new_dialog_box.tscn"
+portrait_on_dialog_box = true
+default_portrait = "Player"
+portraits = {
+"Player": {
+"data": SubResource("Resource_wghw0"),
+"index": 0
+}
+}

@@ -1,13 +1,9 @@
 extends TileMapLayer
 
-@onready var camera_2d: Camera2D = $"../Camera2D"
-@onready var Floor: TileMapLayer = $"../Floor"
-@onready var Rocks: TileMapLayer = $"../Rocks"
-@onready var tree: Area2D = $"../Tree"
-@onready var Objects: TileMapLayer = $"../Objects"
-@onready var switches: TileMapLayer = $"../Switches"
-@onready var puzzle: Control = $"../CanvasLayer/Puzzle"
-@onready var dialog: Control = $"../CanvasLayer/Dialog"
+@onready var camera_2d: Camera2D = %Camera2D
+@onready var Floor: TileMapLayer = %Floor
+@onready var Objects: TileMapLayer = %Objects
+@onready var switches: Node2D = %Switches
 
 var hasWalked: bool = false
 var playerPosition: Vector2 = Vector2.ZERO
@@ -19,9 +15,6 @@ func _ready() -> void:
 	playerPosition = get_used_cells()[0]
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_echo() || Global.isActionsPaused:
-		return
-		
 	var direction: Vector2 = Vector2.ZERO
 	if event.is_action_pressed("left"):
 		direction.x = -1
@@ -38,10 +31,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			var history: MoveHistory = movementHistory.pop_back()
 			if history.isType("move"):
 				moveCell(history.movementDirection * -1, true)
-				if movementHistory.size() > 0 && movementHistory[-1].isType("rock"):
+				if movementHistory.size() > 0 && movementHistory[-1].isType("object"):
 					history = movementHistory.pop_back()
-			if history.isType("rock"):
-				Rocks.moveCell(history.currentPosition + history.movementDirection, history.movementDirection * -1)
+			if history.isType("object"):
+				Objects.moveCell(history.currentPosition + history.movementDirection, history.movementDirection * -1)
 	if direction != Vector2.ZERO:
 		if !hasWalked:
 			hasWalked = true
@@ -56,19 +49,17 @@ func checkTile(tileLayer: TileMapLayer, newPosition: Vector2) -> bool:
 
 func talk(direction: Vector2) -> void:  
 	var newPosition: Vector2i = playerPosition + direction
-	if checkTile(Rocks, newPosition) || checkTile(Objects, newPosition):
-		Global.emit_signal("talk", Rocks.get_cell_atlas_coords(newPosition), Rocks.get_cell_source_id(newPosition))
-	if checkTile(switches, newPosition) && switches.get_cell_atlas_coords(newPosition) == Vector2i(0, 3):
-		puzzle.show()
-		dialog.hide()
-	elif tree.get_overlapping_bodies != null:
-		Global.emit_signal("talk", Vector2(-1, 0), 0)
+	if checkTile(Objects, newPosition):
+		Global.emit_signal("talk", Objects.get_cell_atlas_coords(newPosition), Objects.get_cell_source_id(newPosition))
+	#if checkTile(switches, newPosition) && switches.get_cell_atlas_coords(newPosition) == Vector2i(0, 3):
+		#puzzle.show()
+		#dialog.hide()
 	
 func pushRocks(direction: Vector2) -> void:
 	var newPosition: Vector2i = playerPosition + direction
-	if checkTile(Rocks, newPosition):
-		movementHistory.append(MoveHistory.new("rock", newPosition,  direction))
-		Rocks.moveCell(newPosition, direction)
+	if checkTile(Objects, newPosition):
+		movementHistory.append(MoveHistory.new("object", newPosition,  direction))
+		Objects.moveCell(newPosition, direction)
 
 func moveCell(direction: Vector2, history: bool = false) -> void:
 	var newPosition: Vector2i = playerPosition + direction
@@ -76,7 +67,7 @@ func moveCell(direction: Vector2, history: bool = false) -> void:
 	var isBoundry: bool = false
 	if floorData != null:
 		isBoundry = floorData.get_custom_data("Floor")
-	if !isBoundry || checkTile(Rocks, newPosition) || checkTile(Objects, newPosition):
+	if !isBoundry || checkTile(Objects, newPosition):
 		return
 	if !history:
 		movementHistory.append(MoveHistory.new("move", playerPosition, direction))

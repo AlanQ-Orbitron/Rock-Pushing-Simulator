@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SproutyDialogsCharacterData" format=3 uid="uid://ckd4nf1yji1s8"]
+
+[ext_resource type="Script" uid="uid://kwoapf8il7ee" path="res://addons/sprouty_dialogs/resources/character_data.gd" id="1_c036y"]
+[ext_resource type="Script" uid="uid://ygs6blymsjbh" path="res://addons/sprouty_dialogs/resources/portrait_data.gd" id="1_q0dvr"]
+
+[sub_resource type="Resource" id="Resource_xn3qc"]
+script = ExtResource("1_q0dvr")
+portrait_scene_uid = 944596845839757124
+portrait_scene_path = "res://scenes/charactors/new_portrait.tscn"
+export_overrides = {
+"portrait_image": {
+"type": 4,
+"value": ""
+}
+}
+typing_sound = {}
+
+[resource]
+script = ExtResource("1_c036y")
+key_name = "rock"
+display_name = {
+"default": "Rock",
+"en": ""
+}
+description = "It's a talking rock"
+dialog_box_uid = 8253672747027802455
+dialog_box_path = "res://scenes/charactors/new_dialog_box.tscn"
+default_portrait = "Rock"
+portraits = {
+"Rock": {
+"data": SubResource("Resource_xn3qc"),
+"index": 0
+}
+}

@@ -1,0 +1,14 @@
+[remap]
+
+importer="parley_dialogue_sequence_ast_1.0.0"
+type="Resource"
+uid="uid://c4h130lm7oslk"
+path="res://.godot/imported/talk.ds-e17fca5141c885f348468ee5cc21fd08.tres"
+
+[deps]
+
+source_file="res://assets/dialogs/talk.ds"
+dest_files=["res://.godot/imported/talk.ds-e17fca5141c885f348468ee5cc21fd08.tres"]
+
+[params]
+

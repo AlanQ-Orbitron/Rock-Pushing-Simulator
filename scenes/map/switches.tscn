@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cicf41ghmkovm"]
+
+[ext_resource type="Script" uid="uid://br8i14kvs7nr2" path="res://scenes/map/switches.gd" id="1_c0lal"]
+[ext_resource type="Shader" uid="uid://pqmulj7ldktg" path="res://scenes/map/paths.gdshader" id="1_itmik"]
+[ext_resource type="TileSet" uid="uid://b4x7cuhbftryu" path="res://assets/Floor.tres" id="1_p4kt2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1o26"]
+shader = ExtResource("1_itmik")
+
+[node name="Switches" type="TileMapLayer" unique_id=196811330]
+material = SubResource("ShaderMaterial_h1o26")
+tile_set = ExtResource("1_p4kt2")
+script = ExtResource("1_c0lal")

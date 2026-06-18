@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bsxniin5i4w14"]
+
+[ext_resource type="Texture2D" uid="uid://bf3b47shjfss2" path="res://assets/texture/stars.png" id="2_sgvnm"]
+[ext_resource type="Texture2D" uid="uid://dt0vybh0arjqb" path="res://assets/texture/cheese.png" id="3_dr7k7"]
+[ext_resource type="PackedScene" uid="uid://betmv5j758tan" path="res://scenes/puzzle.tscn" id="4_nph0r"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=387706836]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1077791085]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=338928804]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Stars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=2146735863]
+texture = ExtResource("2_sgvnm")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1996571046]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="Cheese" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=371511247]
+texture = ExtResource("3_dr7k7")
+
+[node name="Puzzle" parent="." unique_id=1384852167 instance=ExtResource("4_nph0r")]
+visible = false
