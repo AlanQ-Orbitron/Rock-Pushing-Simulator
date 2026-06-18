@@ -1,7 +1,8 @@
 shader_type canvas_item;
 
 uniform float speed = 0.5;
-uniform float threshold = 0.2;
+uniform vec4 target_color : source_color = vec4(0.0, 1.0, 1.0, 1.0);
+uniform float color_tolerance = 0.2;
 uniform float world_scale = 4.0;
 
 vec3 palette(float t)
@@ -13,8 +14,8 @@ void fragment()
 {
     vec4 base = texture(TEXTURE, UV);
 
-    float blue_mask = base.b - max(base.r, base.g);
-    float mask = smoothstep(threshold, threshold + 0.2, blue_mask);
+	float distance_from_color = distance(base.rgb, target_color.rgb);
+	float mask = 1.0 - step(color_tolerance, distance_from_color);
 
     vec2 world = SCREEN_UV * world_scale;
 

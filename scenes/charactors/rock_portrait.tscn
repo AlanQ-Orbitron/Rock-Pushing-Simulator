@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b3yfc7fl73xim"]
+
+[ext_resource type="Script" uid="uid://duiacanvblj5" path="res://scenes/charactors/rock_portrait.gd" id="1_j8hls"]
+
+[node name="RockPortrait" type="Node2D" unique_id=1988354358]
+script = ExtResource("1_j8hls")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=168810496]

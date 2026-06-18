@@ -47,14 +47,15 @@ func _unhandled_input(event: InputEvent) -> void:
 func checkTile(tileLayer: TileMapLayer, newPosition: Vector2) -> bool:
 	return tileLayer.get_cell_tile_data(newPosition) != null
 
-func talk(direction: Vector2) -> void:  
-	var newPosition: Vector2i = playerPosition + direction
-	if checkTile(Objects, newPosition):
-		Global.emit_signal("talk", Objects.get_cell_atlas_coords(newPosition), Objects.get_cell_source_id(newPosition))
-	#if checkTile(switches, newPosition) && switches.get_cell_atlas_coords(newPosition) == Vector2i(0, 3):
-		#puzzle.show()
-		#dialog.hide()
-	
+func talk(direction: Vector2) -> void:
+	var lookingDirection: Vector2i = playerPosition + direction
+	if Objects.get_cell_tile_data(lookingDirection) != null:
+		Global.emit_signal(
+			"talk",
+			Objects.get_cell_atlas_coords(lookingDirection),
+			Objects.get_cell_source_id(lookingDirection)
+		)
+
 func pushRocks(direction: Vector2) -> void:
 	var newPosition: Vector2i = playerPosition + direction
 	if checkTile(Objects, newPosition):

@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bf3b47shjfss2" path="res://assets/texture/stars.png" id="2_sgvnm"]
 [ext_resource type="Texture2D" uid="uid://dt0vybh0arjqb" path="res://assets/texture/cheese.png" id="3_dr7k7"]
+[ext_resource type="Script" uid="uid://cqyrg4h7808ga" path="res://scenes/map/dialog.gd" id="4_8d402"]
 [ext_resource type="PackedScene" uid="uid://betmv5j758tan" path="res://scenes/puzzle.tscn" id="4_nph0r"]
+[ext_resource type="Resource" uid="uid://b5ytwja0j3d01" path="res://assets/dialogs/talking_rock.tres" id="5_sgvnm"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=387706836]
 
@@ -24,3 +26,13 @@ texture = ExtResource("3_dr7k7")
 
 [node name="Puzzle" parent="." unique_id=1384852167 instance=ExtResource("4_nph0r")]
 visible = false
+
+[node name="Dialog" type="Control" parent="." unique_id=624330578]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_8d402")
+dialog_data = ExtResource("5_sgvnm")

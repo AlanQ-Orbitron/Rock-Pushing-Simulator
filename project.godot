@@ -115,6 +115,24 @@ translation/characters/character_names_csv=-1
 translation/localization/default_locale="en"
 translation/localization/locales=["en"]
 internal/variables={
+"Message Delivered": {
+"index": 2,
+"metadata": {},
+"type": 1,
+"value": false
+},
+"Message Received": {
+"index": 3,
+"metadata": {},
+"type": 1,
+"value": false
+},
+"Passed Note": {
+"index": 1,
+"metadata": {},
+"type": 1,
+"value": false
+},
 "Player": {
 "index": 0,
 "metadata": {},
@@ -122,5 +140,5 @@ internal/variables={
 "value": "You"
 }
 }
-internal/play_dialog_path="res://assets/dialogs/talk.tres"
-internal/play_start_id="WHATSMYNAME"
+internal/play_dialog_path="res://assets/dialogs/talking_rock.tres"
+internal/play_start_id="TALKING_ROCK"

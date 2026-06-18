@@ -5,7 +5,229 @@
 [resource]
 script = ExtResource("1_403uu")
 graph_data = {
+"PEN_PAL": {
+"condition_node_1": {
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": "Message Received"
+},
+"node_index": 1,
+"node_type": "condition_node",
+"offset": Vector2(420, 1560),
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 1,
+"value": false
+},
+"size": Vector2(300.0001, 182.00012),
+"to_dialog": "",
+"to_node": ["dialogue_node_16", "dialogue_node_19"]
+},
+"dialogue_node_14": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "PEN_PAL_DIALOG_14",
+"node_index": 14,
+"node_type": "dialogue_node",
+"offset": Vector2(120, 1200),
+"portrait": "Pen Pal",
+"size": Vector2(250.00003, 377.00012),
+"to_dialog": "",
+"to_node": ["dialogue_node_15"]
+},
+"dialogue_node_15": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "PEN_PAL_DIALOG_15",
+"node_index": 15,
+"node_type": "dialogue_node",
+"offset": Vector2(420, 1200),
+"portrait": "Player",
+"size": Vector2(250.00009, 327.00012),
+"to_dialog": "",
+"to_node": ["condition_node_1"]
+},
+"dialogue_node_16": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "PEN_PAL_DIALOG_16",
+"node_index": 16,
+"node_type": "dialogue_node",
+"offset": Vector2(720, 1200),
+"portrait": "Pen Pal",
+"size": Vector2(250.00006, 352.00012),
+"to_dialog": "",
+"to_node": ["options_node_2"]
+},
+"dialogue_node_17": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "PEN_PAL_DIALOG_17",
+"node_index": 17,
+"node_type": "dialogue_node",
+"offset": Vector2(1300, 1540),
+"portrait": "Pen Pal",
+"size": Vector2(250, 377.00006),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"dialogue_node_18": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "PEN_PAL_DIALOG_18",
+"node_index": 18,
+"node_type": "dialogue_node",
+"offset": Vector2(1300, 1200),
+"portrait": "Pen Pal",
+"size": Vector2(250, 377.00012),
+"to_dialog": "",
+"to_node": ["set_variable_node_2"]
+},
+"dialogue_node_19": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "PEN_PAL_DIALOG_19",
+"node_index": 19,
+"node_type": "dialogue_node",
+"offset": Vector2(420, 1780),
+"portrait": "Rock",
+"size": Vector2(250.00009, 352),
+"to_dialog": "",
+"to_node": ["options_node_3"]
+},
+"dialogue_node_20": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "PEN_PAL_DIALOG_20",
+"node_index": 20,
+"node_type": "dialogue_node",
+"offset": Vector2(1020, 1780),
+"portrait": "Pen Pal",
+"size": Vector2(250.00003, 327),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"options_node_2": {
+"node_index": 2,
+"node_type": "options_node",
+"offset": Vector2(1020, 1200.04),
+"options_conditions": [{
+"enabled": false,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"visibility": 0
+}, {
+"enabled": false,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"visibility": 0
+}],
+"options_keys": ["PEN_PAL_OPT2_1", "PEN_PAL_OPT2_2"],
+"size": Vector2(250.00003, 311.00006),
+"to_dialog": "",
+"to_node": ["dialogue_node_18", "dialogue_node_17"]
+},
+"options_node_3": {
+"node_index": 3,
+"node_type": "options_node",
+"offset": Vector2(720, 1780.0801),
+"options_conditions": [{
+"enabled": false,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": "Message Delivered"
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 1,
+"value": false
+},
+"visibility": 0
+}, {
+"enabled": true,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": "Message Delivered"
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 1,
+"value": true
+},
+"visibility": 0
+}],
+"options_keys": ["PEN_PAL_OPT3_1", "PEN_PAL_OPT3_2"],
+"size": Vector2(250.00006, 639.0004),
+"to_dialog": "",
+"to_node": ["dialogue_node_20", "dialogue_node_20"]
+},
+"set_variable_node_2": {
+"new_value": true,
+"node_index": 2,
+"node_type": "set_variable_node",
+"offset": Vector2(1580, 1200),
+"operator": 0,
+"size": Vector2(565.0002, 77.00006),
+"to_dialog": "",
+"to_node": ["END"],
+"var_metadata": {},
+"var_name": "Message Received",
+"var_type": 1
+},
+"start_node_2": {
+"node_index": 2,
+"node_type": "start_node",
+"offset": Vector2(-120, 1200),
+"size": Vector2(190.00012, 97.00006),
+"start_id": "PEN_PAL",
+"to_dialog": "",
+"to_node": ["dialogue_node_14"]
+}
+},
 "TALKING_ROCK": {
+"condition_node_2": {
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": "Message Delivered"
+},
+"node_index": 2,
+"node_type": "condition_node",
+"offset": Vector2(1560, 900),
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 1,
+"value": false
+},
+"size": Vector2(429, 182),
+"to_dialog": "",
+"to_node": ["dialogue_node_21", "dialogue_node_23"]
+},
 "dialogue_node_1": {
 "char_expand": true,
 "character": "player",
@@ -14,15 +236,301 @@ graph_data = {
 "node_type": "dialogue_node",
 "offset": Vector2(180, 40),
 "portrait": "Player",
-"size": Vector2(250, 327),
+"size": Vector2(250.00008, 327),
+"to_dialog": "",
+"to_node": ["dialogue_node_2"]
+},
+"dialogue_node_10": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "TALKING_ROCK_DIALOG_10",
+"node_index": 10,
+"node_type": "dialogue_node",
+"offset": Vector2(1000, 400),
+"portrait": "Player",
+"size": Vector2(250, 327.00012),
+"to_dialog": "",
+"to_node": ["dialogue_node_11"]
+},
+"dialogue_node_11": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_11",
+"node_index": 11,
+"node_type": "dialogue_node",
+"offset": Vector2(1300, 400),
+"portrait": "Rock",
+"size": Vector2(250, 377.00024),
 "to_dialog": "",
 "to_node": ["END"]
+},
+"dialogue_node_12": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "TALKING_ROCK_DIALOG_12",
+"node_index": 12,
+"node_type": "dialogue_node",
+"offset": Vector2(1000, 780),
+"portrait": "Player",
+"size": Vector2(250, 377.0002),
+"to_dialog": "",
+"to_node": ["dialogue_node_13"]
+},
+"dialogue_node_13": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_13",
+"node_index": 13,
+"node_type": "dialogue_node",
+"offset": Vector2(1300, 800),
+"portrait": "Rock",
+"size": Vector2(250, 377.00006),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"dialogue_node_2": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_2",
+"node_index": 2,
+"node_type": "dialogue_node",
+"offset": Vector2(440, 40),
+"portrait": "Rock",
+"size": Vector2(250.00006, 352),
+"to_dialog": "",
+"to_node": ["options_node_1"]
+},
+"dialogue_node_21": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_21",
+"node_index": 21,
+"node_type": "dialogue_node",
+"offset": Vector2(2040, 960),
+"portrait": "Rock",
+"size": Vector2(250.00037, 377.00006),
+"to_dialog": "",
+"to_node": ["dialogue_node_22"]
+},
+"dialogue_node_22": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "TALKING_ROCK_DIALOG_22",
+"node_index": 22,
+"node_type": "dialogue_node",
+"offset": Vector2(2340, 960),
+"portrait": "Player",
+"size": Vector2(250.00018, 327),
+"to_dialog": "",
+"to_node": ["set_variable_node_3"]
+},
+"dialogue_node_23": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_23",
+"node_index": 23,
+"node_type": "dialogue_node",
+"offset": Vector2(2030.0117, 1407.3485),
+"portrait": "Rock",
+"size": Vector2(250, 377),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"dialogue_node_3": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "TALKING_ROCK_DIALOG_3",
+"node_index": 3,
+"node_type": "dialogue_node",
+"offset": Vector2(1000, 40),
+"portrait": "Player",
+"size": Vector2(250.00024, 327),
+"to_dialog": "",
+"to_node": ["dialogue_node_4"]
+},
+"dialogue_node_4": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_4",
+"node_index": 4,
+"node_type": "dialogue_node",
+"offset": Vector2(1280, 40),
+"portrait": "Rock",
+"size": Vector2(250.00012, 352),
+"to_dialog": "",
+"to_node": ["dialogue_node_5"]
+},
+"dialogue_node_5": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "TALKING_ROCK_DIALOG_5",
+"node_index": 5,
+"node_type": "dialogue_node",
+"offset": Vector2(1580, 40),
+"portrait": "Player",
+"size": Vector2(250.00018, 327),
+"to_dialog": "",
+"to_node": ["dialogue_node_6"]
+},
+"dialogue_node_6": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_6",
+"node_index": 6,
+"node_type": "dialogue_node",
+"offset": Vector2(1860, 40),
+"portrait": "Rock",
+"size": Vector2(250, 377),
+"to_dialog": "",
+"to_node": ["dialogue_node_7"]
+},
+"dialogue_node_7": {
+"char_expand": true,
+"character": "player",
+"dialog_key": "TALKING_ROCK_DIALOG_7",
+"node_index": 7,
+"node_type": "dialogue_node",
+"offset": Vector2(2160, 40),
+"portrait": "Player",
+"size": Vector2(250.00043, 327),
+"to_dialog": "",
+"to_node": ["dialogue_node_8"]
+},
+"dialogue_node_8": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_8",
+"node_index": 8,
+"node_type": "dialogue_node",
+"offset": Vector2(2460, 40),
+"portrait": "Rock",
+"size": Vector2(250.00043, 327),
+"to_dialog": "",
+"to_node": ["dialogue_node_9"]
+},
+"dialogue_node_9": {
+"char_expand": true,
+"character": "rock",
+"dialog_key": "TALKING_ROCK_DIALOG_9",
+"node_index": 9,
+"node_type": "dialogue_node",
+"offset": Vector2(2760, 40),
+"portrait": "Rock",
+"size": Vector2(250.00098, 377),
+"to_dialog": "",
+"to_node": ["set_variable_node_1"]
+},
+"options_node_1": {
+"node_index": 1,
+"node_type": "options_node",
+"offset": Vector2(720, 40.12998),
+"options_conditions": [{
+"enabled": true,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": "Passed Note"
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 1,
+"value": false
+},
+"visibility": 0
+}, {
+"enabled": true,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": "Passed Note"
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 1,
+"value": true
+},
+"visibility": 0
+}, {
+"enabled": true,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": "Passed Note"
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 1,
+"value": true
+},
+"visibility": 0
+}, {
+"enabled": false,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"visibility": 0
+}, {
+"enabled": true,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": "Message Received"
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 1,
+"value": true
+},
+"visibility": 0
+}],
+"options_keys": ["TALKING_ROCK_OPT1_1", "TALKING_ROCK_OPT1_2", "TALKING_ROCK_OPT1_3", "TALKING_ROCK_OPT1_4", "TALKING_ROCK_OPT1_5"],
+"size": Vector2(250.00006, 1365),
+"to_dialog": "",
+"to_node": ["dialogue_node_3", "dialogue_node_10", "dialogue_node_12", "END", "condition_node_2"]
+},
+"set_variable_node_1": {
+"new_value": true,
+"node_index": 1,
+"node_type": "set_variable_node",
+"offset": Vector2(3060, 40),
+"operator": 0,
+"size": Vector2(565.00073, 77),
+"to_dialog": "",
+"to_node": ["END"],
+"var_metadata": {},
+"var_name": "Passed Note",
+"var_type": 1
+},
+"set_variable_node_3": {
+"new_value": true,
+"node_index": 3,
+"node_type": "set_variable_node",
+"offset": Vector2(2660, 960),
+"operator": 0,
+"size": Vector2(565.00024, 77),
+"to_dialog": "",
+"to_node": ["END"],
+"var_metadata": {},
+"var_name": "Message Delivered",
+"var_type": 1
 },
 "start_node_1": {
 "node_index": 1,
 "node_type": "start_node",
-"offset": Vector2(-68.60146, 42.871784),
-"size": Vector2(190, 97),
+"offset": Vector2(-60, 40),
+"size": Vector2(190.00024, 97.00012),
 "start_id": "TALKING_ROCK",
 "to_dialog": "",
 "to_node": ["dialogue_node_1"]
@@ -30,13 +538,133 @@ graph_data = {
 }
 }
 dialogs = {
+"PEN_PAL_DIALOG_14": {
+"default": "Hey! Someone... omg it has been soo long since I have seen anyone these days!",
+"en": ""
+},
+"PEN_PAL_DIALOG_15": {
+"default": "Oh hello!",
+"en": ""
+},
+"PEN_PAL_DIALOG_16": {
+"default": "Oh, perhaps you have a message for you?",
+"en": ""
+},
+"PEN_PAL_DIALOG_17": {
+"default": "Oh, thats ok, I have a message for you, could you deliver it?",
+"en": ""
+},
+"PEN_PAL_DIALOG_18": {
+"default": "Omg, rock I haven't heard from them in a while, its nice to know they still are around! Its getting hard to send messages lately! Actually could you deliver this note back to they? It would be really nice!",
+"en": ""
+},
+"PEN_PAL_DIALOG_19": {
+"default": "So did you send the message yet?",
+"en": ""
+},
+"PEN_PAL_DIALOG_20": {
+"default": "Work In Progress!",
+"en": ""
+},
+"PEN_PAL_OPT2_1": {
+"default": "Rock said..."
+},
+"PEN_PAL_OPT2_2": {
+"default": "No..."
+},
+"PEN_PAL_OPT3_1": {
+"default": "No,,,"
+},
+"PEN_PAL_OPT3_2": {
+"default": "Yeah"
+},
 "TALKING_ROCK_DIALOG_1": {
 "default": "Hello?",
 "en": ""
+},
+"TALKING_ROCK_DIALOG_10": {
+"default": "What is the button?",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_11": {
+"default": "The button? Ah that is a pressure switch, if it detects something heavy upon it, it will active the connecting gate! When moving if you move into an object you push it! Isn't that neat.",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_12": {
+"default": "Um, I accidentally shove you to the wall... and I'm too weak to pull you out from that wall...",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_13": {
+"default": "[wave]...[/wave] No worries you can press 'Z' it undo actions and regrets.",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_2": {
+"default": "[pulse]The rock give no response[/pulse]",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_21": {
+"default": "Ah! Thank you so much, its so nice to hear from them again!",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_22": {
+"default": "Work In Progress",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_23": {
+"default": "You already delivered that, come talke to me with new information or if you get stuck!",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_3": {
+"default": "Hello??",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_4": {
+"default": "[shake]Zzzzzzzzzzzzzzzzzzz...[/shake]",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_5": {
+"default": "...",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_6": {
+"default": "Huh? Oh hey! I didn't see you there kinda dose of for a sec, sorry!",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_7": {
+"default": "You do talk!",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_8": {
+"default": "Of course I talk...",
+"en": ""
+},
+"TALKING_ROCK_DIALOG_9": {
+"default": "Though rocks only talk to each other usually, speaking of which could you passed this note to my penpal, their past the gate, its being a while since I've heard from them... It gets harder and harder every year!",
+"en": ""
+},
+"TALKING_ROCK_OPT1_1": {
+"default": "Talk to the rock"
+},
+"TALKING_ROCK_OPT1_2": {
+"default": "Button?"
+},
+"TALKING_ROCK_OPT1_3": {
+"default": "Got an Object stuck!"
+},
+"TALKING_ROCK_OPT1_4": {
+"default": "I have better things to do"
+},
+"TALKING_ROCK_OPT1_5": {
+"default": "I have a message for you"
 }
 }
 characters = {
+"PEN_PAL": {
+"player": 2425549466969165073,
+"rock": 5482707249024184253
+},
 "TALKING_ROCK": {
-"player": 2425549466969165073
+"player": 2425549466969165073,
+"rock": 5482707249024184253
 }
 }

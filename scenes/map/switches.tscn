@@ -6,6 +6,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h1o26"]
 shader = ExtResource("1_itmik")
+shader_parameter/speed = 0.5
+shader_parameter/target_color = Color(0.24705882, 0.6901961, 0.99215686, 1)
+shader_parameter/color_tolerance = 0.25
+shader_parameter/world_scale = 4.0
 
 [node name="Switches" type="TileMapLayer" unique_id=196811330]
 material = SubResource("ShaderMaterial_h1o26")
