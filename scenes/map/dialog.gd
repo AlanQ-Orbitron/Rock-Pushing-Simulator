@@ -14,10 +14,11 @@ func _ready() -> void:
 	Global.connect("talk", talk)
 
 func talk(atlas: Vector2i, id: int) -> void:
-	if dialog_player != null:
+	if dialog_player != null || !dialogs.has([atlas, id]):
 		return
+	var dialogID: String = dialogs.get([atlas, id])
 	amountTalked += 1
 	dialog_player = DialogPlayer.new()
 	add_child(dialog_player)
-	dialog_player.set_dialog(dialog_data, dialogs.get([atlas, id]))
+	dialog_player.set_dialog(dialog_data, dialogID)
 	dialog_player.start()

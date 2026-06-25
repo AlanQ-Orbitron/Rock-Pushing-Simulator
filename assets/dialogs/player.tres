@@ -33,7 +33,6 @@ display_name = {
 description = "This is you! You are you!"
 dialog_box_uid = 1416539375689729628
 dialog_box_path = "res://scenes/charactors/player_dialog_box.tscn"
-portrait_on_dialog_box = true
 default_portrait = "Player"
 portraits = {
 "Player": {

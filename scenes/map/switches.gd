@@ -15,10 +15,11 @@ func movementTrigger() -> void:
 	var greySwitches: bool = true
 	var greenSwitches: bool = false
 	for switch: Vector2i in get_used_cells():
-		if !switchState(switch, Vector2i(0, 8), Vector2i(1, 8)):
-			greySwitches = false
-		if switchState(switch, Vector2i(0, 9), Vector2i(1, 9)):
-			greenSwitches = true
+		if get_cell_atlas_coords(switch) != Vector2i(2, 6):
+			if !switchState(switch, Vector2i(0, 8), Vector2i(1, 8)):
+				greySwitches = false
+			if switchState(switch, Vector2i(0, 9), Vector2i(1, 9)):
+				greenSwitches = true
 	if greySwitches || greenSwitches:
 		Floor.set_cell(TilePosition, 0, Vector2i(2, 8))
 	else:

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c3klgtjy8fnw3"]
+
+[ext_resource type="Script" uid="uid://cshpq2mf32ax2" path="res://scenes/sin_wave_puzzle.gd" id="1_icnbs"]
+
+[sub_resource type="Curve" id="Curve_jo2o2"]
+_data = [Vector2(0, 0.49438208), 0.0, 0.0, 0, 0, Vector2(1, 0.49438208), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Sin Wave Puzzle" type="Control" unique_id=584296236]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_icnbs")
+waveScale = 0.05
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1201248359]
+width_curve = SubResource("Curve_jo2o2")
